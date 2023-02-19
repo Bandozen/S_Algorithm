@@ -7,7 +7,6 @@ def dfs(s, g):
     while True:
         if i == g:
             return 1
-            break
         else:
             for w in adj_list[i]:
                 if visited[w] == 0:
@@ -20,7 +19,6 @@ def dfs(s, g):
                     i = stack.pop()
                 else:
                     return 0
-                    break
 
 
 t = int(input())
@@ -31,4 +29,4 @@ for tc in range(1, t+1):
         start, to = map(int, input().split())
         adj_list[start].append(to)
     s, g = map(int, input().split())
-    print(f'#{tc}', dfs(s,g))
+    print(f'#{tc}', dfs(s, g))
