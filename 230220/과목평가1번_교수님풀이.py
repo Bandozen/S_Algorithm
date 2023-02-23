@@ -1,8 +1,10 @@
 dr = [-1, -1, -1, 0, 0, 1, 1, 1]
 dc = [-1, 0, 1, -1, 1, -1, 0, 1]
 
+
 def in_range(r, c):
     return 0 <= r < n and 0 <= c < n
+
 
 t = int(input())
 
@@ -41,16 +43,21 @@ for tc in range(1, t+1):
                 max_h = mountains[r][c] if max_h < mountains[r][c] else max_h
                 min_h = mountains[r][c] if min_h < mountains[r][c] else min_h
 
-    '''
-    외곽을 제외하고 r, c 검사
-    for r in range(1, n-1):
-        for c in range(1, n-1):
-        
-            # 8방향 탐색해서 나보다 높거나 같은 곳 있는지만 검사
-            for d in range(1, 
-    
-    
-    '''
+    # # 외곽을 제외하고 r,c 검사
+    # for r in range(1, n - 1):
+    #     for c in range(1, n - 1):
+    #
+    #         # 8방향 탐색해서 나보다 높거나 같은곳 있는지만 검사
+    #         for d in range(8):
+    #             nr = r + dr[d]
+    #             nc = c + dc[d]
+    #
+    #             if mountains[r][c] <= mountains[nr][nc]:
+    #                 break
+    #         else:
+    #             hill += 1
+    #             max_h = mountains[r][c] if max_h < mountains[r][c] else max_h
+    #             min_h = mountains[r][c] if min_h > mountains[r][c] else min_h
     # 봉우리의 개수가 2개 이상이면 최대-최소 계산
     if hill >= 2:
         print(f"#{tc} {max_h - min_h}")
