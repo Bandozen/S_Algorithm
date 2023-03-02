@@ -16,7 +16,8 @@ def solution(n):
         for j in range(7):
             # 음수만큼 쉬프트가 일어났다.
             # ==> 자리수가 넘어갔다(더이상 만들 필요가 없음)
-
+            if i - j < 0:
+                break
             bin += "1" if x & (1 << i - j) else "0"
 
         print(bin, end = " ")
